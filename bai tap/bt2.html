@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Viết chương trình khai báo đối tượng information có các t
+        // huộc tính id, name, phone, address. 
+        // Tiến hành xóa thuộc tính address và thêm thuộc tính email cho đối tượng 
+        //  in đối tượng ra màn hình.
+        const username = prompt("vui long nhap ten cua ban");
+        const phone = +prompt("vui long phap sdt cua ban");
+        const address = prompt("vui long nhap dia chi cau ban");
+        const id = +prompt("vui long phap id cua ban");
+        const myemail = prompt("vui long nhap email cua ban");
+        
+        const staff = {
+               id: id,
+               name: username,
+               address: address,
+               phone: phone,
+        }
+        let information = [];
+        information.push(staff);
+        console.log(information);
+        delete staff.address;
+        staff.email = myemail;
+    </script>
+</body>
+</html>

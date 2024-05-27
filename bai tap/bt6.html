@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Cho một mảng  chứa các đối tượng product gồm các thông tin sau:
+        //  id, product_name, price.
+        // / Xây dựng hàm để sắp xếp danh sách products tăng dần và in ra mảng đã được sắp xếp ra ngoài màn hình
+
+     const products = [
+        {
+          id: 1,
+          product_name: "keo",
+          price: 600
+        },
+        {
+          id: 2,
+          product_name: "mut",
+          price: 300
+        },
+        {
+          id: 3,
+          product_name: "banh",
+          price: 400
+        },
+    ]
+
+        //   let findprice = products[].price
+    // console.log(findprice);
+        // for( let i = 0; i <products.length-1; i++){
+        //     for (let j = i+1; j < products.length; j++) {
+        //         // console.log(products[i].price);
+        //     // console.log(products[j].price);
+        //     if (products[i].price >products[j].price) {
+        //         let d = products[i].price 
+        //         products[i].price = products[j].price
+        //         products[j].price = d;
+        //     }
+        //     }
+        // }
+        // console.log(products);
+     
+        products.sort((a,b) => a.price - b.price);
+        console.log(products);
+    
+    
+   
+ 
+
+    </script>
+</body>
+</html>

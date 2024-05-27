@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Viết chương trình khai báo mảng gồm nhiều đối tượng Book có hai thuộc tính author và name
+        //  Yêu cầu người dùng nhập tên Author từ bàn phím thông qua hàm prompt().
+        //  Sau đó tiến hành tìm kiếm thông tin sách theo tác giả.
+          
+        //  Nếu tìm thấy thì in ra ngoài màn hình đối tượng Book  tìm được, 
+        //   nếu không tìm thấy thì in ra “Không tìm thấy sách”
+
+       const books = [{
+          author: "nguyen trai",
+          book : "thuy kieu",
+       },
+       {
+        author: "nam cao",
+        book: "chi dau",
+       },
+       {
+        author: "tat den",
+        book: "ngo tac to",
+       },
+    ]
+    console.log(books);
+   //  const TG = prompt("nhap ten tac gia muon tim");
+   //  let check = false;
+   //   for (let i = 0; i < book.length; i++) {
+   //      if ( TG === book[i].author){
+   //          check = true;
+   //      }
+   //   }
+   //   if( check==true){
+   //      console.log("tim thay tac gia");
+   //   }else{
+   //      console.log("k tim thay tac gia");
+   //   }
+
+
+   // cach 2 dung ham find
+   // Bài 5:
+// B1: Viết chương trình khai báo mảng gồm nhiều đối tượng
+// Book có hai thuộc tính author và name.
+
+//      const books = [{name: "", author: ""}, ...]
+// B2: Yêu cầu người dùng nhập tên Author từ bàn phím
+// thông qua hàm prompt().
+
+// const textAuthor = prompt("Enter author: ")
+// B3: Sau đó tiến hành tìm kiếm thông tin sách theo tác giả.
+//      const findAuthor = books.find(book => book.author === textAuthor)
+
+// B4: Nếu tìm thấy thì in ra ngoài màn hình đối tượng Book  tìm được,
+// nếu không tìm thấy thì in ra “Không tìm thấy sách”
+//      if (!findAuthor) {} else {};
+
+ const textAuthor = prompt("Enter author: ")
+ const findAuthor = books.find(book => book.author === textAuthor)
+ console.log(findAuthor);
+
+ if(!findAuthor){
+   console.log("k thay");
+ }else{
+   console.log("thay");
+ }
+
+//  if({}){
+//    console.log("thuc hien");
+//  }else{
+//    console.log("k thuc hien");
+//  }
+
+    </script>
+</body>
+</html>

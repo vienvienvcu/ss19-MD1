@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const contacts = [
+        {
+          id: 1,
+          name: "khac tiep",
+          phone: "0678635443",
+          email: "khactiep.gmail.com",
+        },
+        {
+          id: 2,
+          name: "ngoc trinh",
+          phone: "0678635443",
+          email: "ngoctrinh.gmail.com",
+        },
+      ];
+      while (true) {
+        let userInput = prompt(
+          `please input C/R/U/D
+        - C: Create  new contact
+        - R: Display all contacts
+        - U: UPDATE contact
+        - D: DELETE contacts
+        - E: EXIT
+        `
+        );
+
+        if (userInput === "C") {
+          // them moi mot contact vao ds contacts
+          let name = prompt("please input contact ");
+          let phone = prompt("please input phone ");
+          let email = prompt("please input email ");
+
+          //   let contact = {
+          //     // if esle toan tu 3 ngoi
+          //     id: contacts.length === 0 ? 1 : contacts[contacts.length - 1].id,
+          //     name: name,
+          //     phone,
+          //     email,
+          //   };
+
+          //   contacts.push(contact);
+          addContact(name, phone, email);
+          displayContacts();
+
+          for (let c of contacts) {
+            console.log(`name : ${c.name}`);
+            console.log(`phone : ${c.phone}`);
+            console.log(`email : ${c.email}`);
+            console.log("-------------------");
+          }
+        } else if (userInput === "R") {
+          // hien thi toan bo contact
+          displayContacts();
+        } else if (userInput === "U") {
+          // cap nhat mot contact
+          let name = prompt("please input contact name u want to update");
+
+          //    tim kiem doi tuong contact trong danh sach contacts qua truong
+          //  name
+          let findIndex = findContacByName(name);
+          //   let updateIndex = contacts.findIndex(function (el, i) {
+          //     return el.name === name;
+          //   });
+
+          if (updateIndex === -1) {
+            console.log("contact not found");
+          } else {
+            let newName = prompt("please input contact me");
+            let newPhone = prompt("please input contact phone");
+            let newEmail = prompt("please input contact email");
+
+            updateContactByInfo(findIndex, {
+              name: newName,
+              newPhone: newPhone,
+              email: newEmail,
+            });
+
+            // contacts[updateIndex].name = newName;
+            // contacts[updateIndex].phone = newPhone;
+            // contacts[updateIndex].email = newEmail;
+          }
+          displayContacts;
+        } else if (userInput === "D") {
+          // xao mot contact
+        } else if (userInput === "E") {
+          // Thoat khoi chuong trinh
+          console.log("exit contact successfully");
+          break;
+        } else {
+          console.log("cau lenh k hop le");
+        }
+      }
+      // function khoi tao:
+      function addContact(name, phone, email) {
+        let contact = {
+          // if esle toan tu 3 ngoi
+          id: contacts.length === 0 ? 1 : contacts[contacts.length - 1].id,
+          name: name,
+          phone,
+          email,
+        };
+        contacts.push(contact);
+      }
+      function displayContacts() {
+        console.log("-----Phone List------");
+        for (let c of contacts) {
+          console.log(`name : ${c.name}`);
+          console.log(`phone : ${c.phone}`);
+          console.log(`email : ${c.email}`);
+          console.log("-------------------");
+        }
+      }
+      //   viet ham tim phan tu co ton tai hay khong?
+
+      function findContactByName(name) {
+        // Tìm kiếm đối tượng contact trong danh sách contacts qua trường
+        // name
+        let updateIndex = contacts.findIndex(function (el, i) {
+          return el.name === name;
+        });
+        return updateIndex;
+      }
+
+      function updateContactByInfo(index, info) {
+        contacts[index].name = info.name;
+        contacts[index].email = info.email;
+        contacts[index].phone = info.phone;
+
+        displayContacts();
+      }
+    </script>
+  </body>
+</html>
